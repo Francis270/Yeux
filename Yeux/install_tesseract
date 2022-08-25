@@ -1,0 +1,6 @@
+Developer PowerShell for VS 2022 Current
+git clone https://github.com/microsoft/vcpkg
+.\vcpkg\bootstrap-vcpkg.bat
+.\vcpkg\vcpkg search tesseract
+.\vcpkg\vcpkg install tesseract:x64-windows
+.\vcpkg\vcpkg.exe integrate install
