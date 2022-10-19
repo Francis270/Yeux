@@ -94,7 +94,7 @@ namespace yeux {
 		pixDestroy(&m_pixels);
 	}
 
-	std::string const Yeux::getText(Region const& region, bool const debug) const
+	std::string const Yeux::getText(Region const& region, bool debug) const
 	{
 		Pix*		crop = cropPix(m_pixels, region.x, region.y, region.x2, region.y2);
 		Pix*		process = processPix(crop, region.scale, false);
@@ -108,7 +108,7 @@ namespace yeux {
 		return ret.first;
 	}
 
-	std::string const Yeux::getColor(Region const& region, bool const debug) const
+	std::string const Yeux::getColor(Region const& region, bool debug) const
 	{
 		std::string color = "";
 		RGB			rgb = getRGB(region, false);
@@ -141,7 +141,7 @@ namespace yeux {
 		return color;
 	}
 
-	RGB const Yeux::getRGB(Region const& region, bool const debug) const
+	RGB const Yeux::getRGB(Region const& region, bool debug) const
 	{
 		RGB			rgb = { 0, 0, 0 };
 		l_uint32	val;
@@ -256,7 +256,7 @@ namespace yeux {
 		::GlobalFree((HGLOBAL)lpBits);
 	}
 
-	Pix* Yeux::cropPix(Pix* pixs, int const x, int const y, int const x2, int const y2) const
+	Pix* Yeux::cropPix(Pix* pixs, int x, int y, int x2, int y2) const
 	{
 		if (x2 - x <= 0 || y2 - y <= 0) {
 			return pixs;
